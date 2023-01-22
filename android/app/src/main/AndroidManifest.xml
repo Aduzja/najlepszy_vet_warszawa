@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.najlepszy_vet_warszawa">
+    package="com.aduzja.najlepszy_vet_warszawa">
    <application
         android:label="najlepszy_vet_warszawa"
         android:name="${applicationName}"

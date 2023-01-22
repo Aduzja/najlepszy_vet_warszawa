@@ -1,4 +1,4 @@
-package com.example.najlepszy_vet_warszawa
+package com.aduzja.najlepszy_vet_warszawa
 
 import io.flutter.embedding.android.FlutterActivity
 

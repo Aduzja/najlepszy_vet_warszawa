@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "846453367990",
+    "project_id": "najlepszy-vet-wawa-22012023",
+    "storage_bucket": "najlepszy-vet-wawa-22012023.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:846453367990:android:9bc9173bce21c49a27b217",
+        "android_client_info": {
+          "package_name": "com.aduzja.najlepszy_vet_warszawa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "846453367990-3ct8uu1utometj8jaofp6grltqbp76ng.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB1KGyhpN1nis7CR602pl82uX8zRGyv2uY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "846453367990-3ct8uu1utometj8jaofp6grltqbp76ng.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
