@@ -13,6 +13,7 @@ class AddOpinionPageContent extends StatefulWidget {
 class _AddOpinionPageContentState extends State<AddOpinionPageContent> {
   var clinicName = '';
   var streetName = '';
+  var rating = 3.0;
 
   @override
   Widget build(BuildContext context) {
@@ -40,6 +41,18 @@ class _AddOpinionPageContentState extends State<AddOpinionPageContent> {
                   },
                 );
               },
+            ),
+            Slider(
+              onChanged: (newValue) {
+                setState(() {
+                  rating = newValue;
+                });
+              },
+              value: rating,
+              min: 1.0,
+              max: 5.0,
+              divisions: 8,
+              label: rating.toString(),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 20),
