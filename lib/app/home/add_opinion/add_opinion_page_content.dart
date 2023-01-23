@@ -4,7 +4,10 @@ import 'package:flutter/material.dart';
 class AddOpinionPageContent extends StatefulWidget {
   const AddOpinionPageContent({
     Key? key,
+    required this.onSave,
   }) : super(key: key);
+
+  final Function onSave;
 
   @override
   State<AddOpinionPageContent> createState() => _AddOpinionPageContentState();
@@ -57,13 +60,16 @@ class _AddOpinionPageContentState extends State<AddOpinionPageContent> {
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 20),
               child: ElevatedButton(
-                onPressed: () {
-                  FirebaseFirestore.instance.collection('clinic').add({
-                    'name': clinicName,
-                    'street': streetName,
-                    'rating': 3.0,
-                  });
-                },
+                onPressed: clinicName.isEmpty || streetName.isEmpty
+                    ? null
+                    : () {
+                        FirebaseFirestore.instance.collection('clinic').add({
+                          'name': clinicName,
+                          'street': streetName,
+                          'rating': 3.0,
+                        });
+                        widget.onSave();
+                      },
                 child: const Text('Dodaj'),
               ),
             ),

@@ -30,7 +30,11 @@ class _HomePageState extends State<HomePage> {
           return const ClinicPageContent();
         }
         if (currentIndex == 1) {
-          return const AddOpinionPageContent();
+          return AddOpinionPageContent(onSave: () {
+            setState(() {
+              currentIndex = 0;
+            });
+          });
         }
         return MyAccountPageContent(email: widget.user.email);
       }),
@@ -59,9 +63,3 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
-
-
-
-
-
-
