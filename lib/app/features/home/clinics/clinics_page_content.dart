@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:najlepszy_vet_warszawa/app/home/clinics/cubit/clinics_cubit.dart';
+import 'package:najlepszy_vet_warszawa/app/features/home/clinics/cubit/clinics_cubit.dart';
 
 class ClinicPageContent extends StatelessWidget {
   const ClinicPageContent({
