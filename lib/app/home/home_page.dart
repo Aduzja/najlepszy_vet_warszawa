@@ -32,7 +32,7 @@ class _HomePageState extends State<HomePage> {
         if (currentIndex == 1) {
           return AddOpinionPageContent(onSave: () {
             setState(() {
-              currentIndex = 0;
+              currentIndex = 0;  
             });
           });
         }
