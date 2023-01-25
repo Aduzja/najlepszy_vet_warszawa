@@ -1,8 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:najlepszy_vet_warszawa/app/home/add_opinion/add_opinion_page_content.dart';
-import 'package:najlepszy_vet_warszawa/app/home/clinics/clinics_page_content.dart';
-import 'package:najlepszy_vet_warszawa/app/home/my_account/my_account_page_content.dart';
+import 'package:najlepszy_vet_warszawa/app/features/home/add_opinion/add_opinion_page_content.dart';
+import 'package:najlepszy_vet_warszawa/app/features/home/clinics/clinics_page_content.dart';
+import 'package:najlepszy_vet_warszawa/app/features/home/my_account/my_account_page_content.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({
