@@ -1,5 +1,6 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:najlepszy_vet_warszawa/app/cubit/root_cubit.dart';
 
 class LoginPage extends StatefulWidget {
   LoginPage({
@@ -49,10 +50,10 @@ class _LoginPageState extends State<LoginPage> {
                   onPressed: () async {
                     if (isCreatingAccount == true) {
                       try {
-                        await FirebaseAuth.instance
-                            .createUserWithEmailAndPassword(
-                                email: widget.emailController.text,
-                                password: widget.passwordController.text);
+                        await (context.read<RootCubit>().createUser(
+                              email: widget.emailController.text,
+                              password: widget.passwordController.text,
+                            ));
                       } catch (error) {
                         setState(() {
                           errorMessage = 'Coś poszło nie tak';
@@ -60,9 +61,10 @@ class _LoginPageState extends State<LoginPage> {
                       }
                     } else {
                       try {
-                        await FirebaseAuth.instance.signInWithEmailAndPassword(
-                            email: widget.emailController.text,
-                            password: widget.passwordController.text);
+                        await (context.read<RootCubit>().signIn(
+                              email: widget.emailController.text,
+                              password: widget.passwordController.text,
+                            ));
                       } catch (error) {
                         setState(() {
                           errorMessage = 'Coś poszło nie tak';

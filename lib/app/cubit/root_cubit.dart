@@ -24,6 +24,17 @@ class RootCubit extends Cubit<RootState> {
     FirebaseAuth.instance.signOut();
   }
 
+  Future<void> createUser(
+      {required String email, required String password}) async {
+    FirebaseAuth.instance
+        .createUserWithEmailAndPassword(email: email, password: password);
+  }
+
+  Future<void> signIn({required String email, required String password}) async {
+    FirebaseAuth.instance
+        .signInWithEmailAndPassword(email: email, password: password);
+  }
+
   Future<void> start() async {
     emit(
       const RootState(
