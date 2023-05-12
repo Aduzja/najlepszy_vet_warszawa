@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:najlepszy_vet_warszawa/app/features/home/clinics/cubit/clinics_cubit.dart';
@@ -27,26 +28,35 @@ class ClinicPageContent extends StatelessWidget {
           return ListView(
             children: [
               for (final document in documents) ...[
-                Padding(
-                  padding: const EdgeInsets.all(20),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            document['name'],
-                          ),
-                          Text(
-                            document['street'],
-                          ),
-                        ],
-                      ),
-                      Text(
-                        document['rating'].toString(),
-                      ),
-                    ],
+                Dismissible(
+                  key: ValueKey(document.id),
+                  onDismissed: (_) {
+                    FirebaseFirestore.instance
+                        .collection('categories')
+                        .doc(document.id)
+                        .delete();
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.all(20),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              document['name'],
+                            ),
+                            Text(
+                              document['street'],
+                            ),
+                          ],
+                        ),
+                        Text(
+                          document['rating'].toString(),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ],
