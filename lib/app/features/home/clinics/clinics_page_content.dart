@@ -14,7 +14,7 @@ class ClinicPageContent extends StatelessWidget {
       create: (context) => ClinicsCubit()..start(),
       child: BlocBuilder<ClinicsCubit, ClinicsState>(
         builder: (context, state) {
-          if (state.errorMessage.isNotEmpty) {
+           if (state.errorMessage.isNotEmpty) {
             return Center(
               child: Text('Something went wrong: ${state.errorMessage}'),
             );
